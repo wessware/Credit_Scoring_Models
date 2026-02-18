@@ -47,8 +47,43 @@ GROUP BY Education;
 
 
 SELECT ApplicantIncome, LoanAmount from loan_data_clean
-
-ORDER BY ApplicantIncome DESC LIMIT 20;
+ORDER BY ApplicantIncome DESC;
 
 --INSIGHT ANALYSIS QUERIES
 
+SELECT Gender, 
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME, 
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
+
+GROUP BY Gender;
+
+
+SELECT Married, 
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME,
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
+
+GROUP BY Married;
+
+
+SELECT Self_Employed, 
+
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME,
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
+
+GROUP BY Self_Employed;
+
+
+SELECT Credit_History, 
+
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME,
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
+
+GROUP BY Credit_History;
+
+
+SELECT Property_Area,
+
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME,
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
+
+GROUP BY Property_Area;

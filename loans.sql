@@ -205,3 +205,14 @@ SELECT Education, Loan_Status,
 COUNT(*) as COUNT from loan_data_clean
 
 GROUP BY Education, Loan_Status;
+
+
+
+SELECT 
+
+SUM(CASE WHEN Loan_Status=0 THEN LoanAmount ELSE 0 END) as Defaulted_Loan_Amount,
+SUm(CASE WHEN Loan_Status=0 THEN LoanAmount ELSE 0 END)*100/SUM(LoanAmount) 
+
+as Portfolio_risk_percentage 
+
+from loan_data_clean;

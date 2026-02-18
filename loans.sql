@@ -87,3 +87,45 @@ AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME,
 AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
 
 GROUP BY Property_Area;
+
+SELECT Gender, 
+
+SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE from loan_data_clean
+
+GROUP BY Gender;
+
+SELECT Married, 
+
+SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE from loan_data_clean
+
+GROUP BY Married;
+
+
+SELECT Education, 
+
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME,
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
+
+GROUP BY Education;
+
+
+SELECT Dependents,
+
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME,
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
+
+GROUP BY Dependents;
+
+SELECT Property_Area,
+
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME,
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT from loan_data_clean
+
+GROUP BY Property_Area;
+
+
+SELECT Self_Employed,
+
+SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE from loan_data_clean
+
+GROUP BY Self_Employed;

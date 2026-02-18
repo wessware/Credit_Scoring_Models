@@ -30,3 +30,25 @@ GROUP BY Loan_Status;
 SELECT Loan_Status,
 AVG(LoanAmount) as Average_Loan_Amount from loan_data_clean
 GROUP BY Loan_Status;
+
+
+
+SELECT MIN(LoanAmount) as Min_Loan_Amount, 
+MAX(LoanAmount) as Max_Loan_Amount FROM loan_data_clean;
+
+SELECT MIN(ApplicantIncome) as Minimum_Income, 
+MAX(ApplicantIncome) as Maximum_Income FROM loan_data_clean;
+
+SELECT Property_Area, COUNT(*) as Count from loan_data_clean 
+GROUP BY Property_Area;
+
+SELECT Education, COUNT(*) as Count from loan_data_clean
+GROUP BY Education;
+
+
+SELECT ApplicantIncome, LoanAmount from loan_data_clean
+
+ORDER BY ApplicantIncome DESC LIMIT 20;
+
+--INSIGHT ANALYSIS QUERIES
+

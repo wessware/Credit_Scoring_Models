@@ -90,13 +90,15 @@ GROUP BY Property_Area;
 
 SELECT Gender, 
 
-SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE from loan_data_clean
+SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as 
+LOAN_APPROVAL_RATE from loan_data_clean
 
 GROUP BY Gender;
 
 SELECT Married, 
 
-SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE from loan_data_clean
+SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as 
+LOAN_APPROVAL_RATE from loan_data_clean
 
 GROUP BY Married;
 
@@ -129,3 +131,11 @@ SELECT Self_Employed,
 SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE from loan_data_clean
 
 GROUP BY Self_Employed;
+
+
+SELECT ApplicantIncome, LoanAmount, LoanAmount/ApplicantIncome as 
+LOAN_INCOME_RATIO from loan_data_clean
+
+WHERE ApplicantIncome IS NOT NULL AND LoanAmount IS NOT NULL
+
+ORDER BY LOAN_INCOME_RATIO ASC;

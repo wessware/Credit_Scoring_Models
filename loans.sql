@@ -197,3 +197,11 @@ SELECT LoanAmount, ApplicantIncome FROM loan_data_clean
 WHERE Credit_History=0 AND LoanAmount > 150
 
 ORDER BY LoanAmount DESC;
+
+
+
+SELECT Education, Loan_Status,
+
+COUNT(*) as COUNT from loan_data_clean
+
+GROUP BY Education, Loan_Status;

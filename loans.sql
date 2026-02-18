@@ -154,3 +154,17 @@ SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as
 LOAN_APPROVAL_RATE from loan_data_clean
 
 GROUP BY Education, Self_Employed;
+
+
+
+SELECT ApplicantIncome, LoanAmount from loan_data_clean
+WHERE ApplicantIncome < 100 AND LoanAmount > 100;
+
+
+SELECT Credit_History, Property_Area,  
+AVG(LoanAmount) as AVERAGE_LOAN_AMOUNT,
+AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME
+
+from loan_data_clean
+
+GROUP BY Credit_History, Property_Area;

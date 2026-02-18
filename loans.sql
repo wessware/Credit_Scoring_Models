@@ -168,3 +168,13 @@ AVG(ApplicantIncome) as AVERAGE_APPLICANT_INCOME
 from loan_data_clean
 
 GROUP BY Credit_History, Property_Area;
+
+
+
+SELECT Gender, Married,
+
+SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE 
+
+from loan_data_clean
+
+GROUP BY Gender, Married;

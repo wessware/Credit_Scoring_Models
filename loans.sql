@@ -128,7 +128,8 @@ GROUP BY Property_Area;
 
 SELECT Self_Employed,
 
-SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE from loan_data_clean
+SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as LOAN_APPROVAL_RATE 
+from loan_data_clean
 
 GROUP BY Self_Employed;
 
@@ -139,3 +140,9 @@ LOAN_INCOME_RATIO from loan_data_clean
 WHERE ApplicantIncome IS NOT NULL AND LoanAmount IS NOT NULL
 
 ORDER BY LOAN_INCOME_RATIO ASC;
+
+SELECT Property_Area, 
+SUM(CASE WHEN Loan_Status=1 THEN 1 ELSE 0 END)*100/COUNT(*) as Default_Rate 
+from loan_data_clean
+
+GROUP BY Property_Area;
